@@ -15,4 +15,8 @@ astronauts.post('/', (req, res) => {
     res.json(newAstrounat);
 });
 
+astronauts.get('/', (req, res) => {
+    res.json(astronautsList);
+});
+
 module.exports = astronauts;
