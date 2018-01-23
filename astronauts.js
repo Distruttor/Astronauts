@@ -41,7 +41,7 @@ astronauts.put('/:id', (req, res) => {
         res.sendStatus(400);
     } else {
         astronautsList[index] = req.body;
-        astronautsList[index].id = id;
+        astronautsList[index].ID = id;
         res.status = 200;
         res.json(astronautsList[index]);
     }
