@@ -32,4 +32,19 @@ astronauts.get('/:id', (req, res) => {
     }
 });
 
+astronauts.put('/:id', (req, res) => {
+    let id = req.params.id;
+
+    let index = astronautsList.findIndex(a => {return a.ID === id});
+
+    if(index == -1) {
+        res.sendStatus(400);
+    } else {
+        astronautsList[index] = req.body;
+        astronautsList[index].id = id;
+        res.status = 200;
+        res.json(astronautsList[index]);
+    }
+});
+
 module.exports = astronauts;
