@@ -47,4 +47,18 @@ astronauts.put('/:id', (req, res) => {
     }
 });
 
+astronauts.delete('/:id', (req, res) => {
+    let id = req.params.id;
+
+    let index = astronautsList.findIndex(a => {return a.ID === id});
+
+    if(index == -1) {
+        res.sendStatus(400);
+    } else {
+        astronautsList.splice(index, 1);
+        
+        res.json(astronautsList);
+    }
+});
+
 module.exports = astronauts;
