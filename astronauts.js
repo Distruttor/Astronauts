@@ -20,7 +20,7 @@ astronauts.get('/', (req, res) => {
 });
 
 astronauts.get('/:id', (req, res) => {
-    let id = req.path.id;
+    let id = req.params.id;
 
     let index = astronautsList.findIndex(a => {return a.ID === id});
 
