@@ -91,7 +91,23 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/Error'
-        
+    delete:
+      description: Delete an astronaut
+      parameters:
+      - name: id
+        in: path
+        description: ID of the astronaut
+        required: true
+        type: string
+      responses:
+        204:
+          description: OK - astronaut deleted
+          schema:
+              $ref: '#/definitions/Astronaut'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'  
 definitions:
   Astronaut:
     required:
