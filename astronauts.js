@@ -8,7 +8,7 @@ const astronauts = express.Router();
 const astronautsList = [];
 
 astronauts.post('/', (req, res) => {
-    let newAstrounat = req.body.newAstrounat;
+    let newAstrounat = req.body;
 
     newAstrounat.ID = uuid();
     astronautsList.push(newAstrounat);
