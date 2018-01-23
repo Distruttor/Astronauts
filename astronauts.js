@@ -19,4 +19,16 @@ astronauts.get('/', (req, res) => {
     res.json(astronautsList);
 });
 
+astronauts.get('/:id', (req, res) => {
+    let id = req.path.id;
+
+    let index = astronautsList.findIndex(a => {a.ID === id});
+
+    if(index == -1) {
+        res.sendStatus(400);
+    } else {
+        res.json(astronautsList[index]);
+    }
+});
+
 module.exports = astronauts;
